@@ -1,0 +1,128 @@
+@use "../../styles/responsive";
+
+.search-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin-top: 5px;
+
+  h1 {
+    font-weight: 300;
+    font-size: 24px;
+  }
+
+  .filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ececec;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #c4c4c4;
+    }
+
+    svg {
+      font-size: 16px;
+    }
+  }
+}
+
+form.filter {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 5px;
+  margin-bottom: 5px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 150px;
+
+    .typeOptions {
+      text-transform: capitalize;
+    }
+    label {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    input,
+    select {
+      width: 160px;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #fff;
+    }
+
+    .typeOptions {
+      text-transform: capitalize;
+    }
+  }
+}
+.search-buttons {
+  display: flex;
+  gap: 10px;
+  .toggleMapBtn {
+    display: none;
+    align-items: center;
+    background: #3f87a6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #346f89;
+    }
+
+    @include responsive.md {
+      display: flex;
+    }
+  }
+}
+
+.filter-search-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+
+  button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: #fece51;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: #e6b12b;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

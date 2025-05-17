@@ -1,0 +1,242 @@
+@use "../../styles/responsive";
+
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    transition: all 0.3s ease;
+
+    @include responsive.sm {
+      display: none;
+    }
+  }
+
+  .left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+
+    .logo-item {
+      margin-right: 50px;
+
+      .logo:hover {
+        color: inherit;
+      }
+    }
+    .menu-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      list-style-type: none;
+
+      @include responsive.sm {
+        gap: 0;
+      }
+
+      .active {
+        color: #e6b12b;
+      }
+
+      a:hover {
+        color: #fece51;
+      }
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 28px;
+      }
+
+      span {
+        @include responsive.md {
+          display: none;
+        }
+
+        @include responsive.sm {
+          display: initial;
+        }
+      }
+    }
+  }
+  .right {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
+    height: 100%;
+
+    @include responsive.sm {
+      background-color: transparent;
+    }
+
+    a {
+      padding: 12px 24px;
+      margin: 10px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+
+        @include responsive.lg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      span {
+        @include responsive.sm {
+          display: none;
+        }
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        position: relative;
+        transition: all 0.1s ease-in-out;
+
+        .notification {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .notification.plain {
+          background-color: rgb(109, 109, 109);
+        }
+      }
+    }
+
+    .register-btn,
+    .login-btn {
+      height: auto;
+      background: linear-gradient(135deg, #3f87a6, #83dadd);
+      color: #fff;
+      padding: 12px 26px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+
+      &:hover {
+        opacity: 0.9;
+        color: black;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+
+      &.active {
+        box-shadow: 0 0 0 3px rgba(118, 178, 247, 0.2);
+        background-color: #fff;
+        color: #000;
+      }
+
+      @include responsive.md {
+        font-size: 14px;
+        padding: 8px 18px;
+      }
+    }
+
+    .bg-white {
+      background-color: white;
+    }
+    .bg-black {
+      background-color: rgb(26, 26, 26);
+    }
+    .menu-button {
+      display: none;
+      z-index: 999;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+
+      @include responsive.sm {
+        display: flex;
+      }
+
+      .menu-close {
+        color: black;
+      }
+
+      .menu-open {
+        color: white;
+      }
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      z-index: 995;
+      right: -50%;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      width: 50%;
+      transition: all 0.5s ease;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      list-style-type: none;
+      gap: 10px;
+
+      @include responsive.sm {
+        display: flex;
+      }
+
+      &.mobile {
+        right: 0;
+      }
+
+      &.mobile .active {
+        color: #e6b12b;
+      }
+
+      @include responsive.sm {
+        a {
+          display: initial;
+        }
+      }
+    }
+  }
+}

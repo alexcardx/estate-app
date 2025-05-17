@@ -1,0 +1,135 @@
+@use "../../styles/responsive";
+
+.chatBox {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .top {
+    background-color: #f7c14b85;
+    padding: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .close {
+      cursor: pointer;
+    }
+  }
+  .center {
+    height: 350px;
+    overflow: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .chatMessage {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+
+      &.own {
+        align-self: flex-end;
+        flex-direction: row-reverse;
+        text-align: right;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        align-self: flex-start;
+      }
+
+      .textContent {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        p {
+          margin: 0;
+          font-size: 18px;
+        }
+
+        span {
+          font-size: 12px;
+          background-color: #f7c14b39;
+          padding: 2px;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .bottom {
+    border-top: 2px solid #f7c14b85;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    textarea {
+      flex: 3;
+      height: 100%;
+      border: none;
+      padding: 20px;
+    }
+
+    button {
+      flex: 1;
+      background-color: #f7c14b85;
+      height: 100%;
+      border: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #fcc63e;
+      }
+    }
+  }
+}
+
+.chatBox.modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: flex-start;
+  right: 10px;
+  bottom: 10px;
+  width: 500px;
+  height: 500px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+
+  .center {
+    flex: 1;
+  }
+  @include responsive.sm {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}

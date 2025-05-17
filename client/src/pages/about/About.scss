@@ -1,0 +1,83 @@
+@use "../../styles/responsive";
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 98%;
+  padding: 60px 40px;
+  background-image: url("../../assets/about-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 12px;
+  }
+
+  .text-content {
+    max-width: 800px;
+    margin-bottom: 40px;
+
+    h1 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+  }
+
+  .facts {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .fact-card {
+      flex: 1 1 200px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      text-align: center;
+      color: #fff;
+
+      h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @include responsive.md {
+    padding: 40px 20px;
+
+    .text-content h1 {
+      font-size: 32px;
+    }
+
+    .fact-card h2 {
+      font-size: 24px;
+    }
+  }
+
+  @include responsive.sm {
+    .text-content h1 {
+      font-size: 24px;
+    }
+
+    .fact-card {
+      padding: 16px;
+    }
+  }
+}

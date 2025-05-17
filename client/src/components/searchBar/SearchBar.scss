@@ -1,0 +1,117 @@
+@use "../../styles/responsive";
+
+.searchBar {
+  .type {
+    button {
+      padding: 16px 36px;
+      border: 1px solid #999;
+      border-bottom: none;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+
+      @include responsive.sm {
+        border-bottom: none;
+      }
+
+      &.active {
+        background-color: black;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-right: none;
+      }
+      &:last-child {
+        border-top-right-radius: 5px;
+        border-left: none;
+      }
+    }
+  }
+
+  form {
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+
+    @include responsive.sm {
+      flex-direction: column;
+      gap: 10px;
+      border: none;
+    }
+
+    .city-filter {
+      border: none;
+      width: 100px;
+      height: 60px;
+      flex: 1;
+      flex-basis: 60px;
+      padding: 10px;
+      font-size: 15px;
+
+      option {
+        font-size: 15px;
+      }
+
+      @include responsive.sm {
+        width: 100%;
+        border: 1px solid #999;
+      }
+    }
+    input {
+      border: none;
+      padding: 0px 10px;
+      width: 200px;
+      flex: 1;
+
+      @include responsive.lg {
+        padding: 0px 5px;
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 140px;
+        }
+      }
+      @include responsive.md {
+        width: 200px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include responsive.sm {
+        width: auto;
+        &:nth-child(2),
+        &:nth-child(3) {
+          width: auto;
+        }
+        padding: 20px;
+        border: 1px solid #999;
+      }
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: #fece51;
+      flex-shrink: 1;
+      flex-basis: 100px;
+
+      &:hover {
+        background-color: #e6b12b;
+      }
+      @include responsive.sm {
+        padding: 10px;
+        flex-basis: 60px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

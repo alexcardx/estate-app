@@ -1,0 +1,125 @@
+@use "../../styles/responsive";
+
+.homePage {
+  display: flex;
+  height: 100%;
+
+  .textContainer {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 50px;
+      height: 100%;
+
+      @include responsive.lg {
+        padding-right: 50px;
+      }
+
+      @include responsive.md {
+        padding: 0;
+      }
+
+      @include responsive.sm {
+        justify-content: flex-start;
+      }
+
+      .title {
+        font-size: 64px;
+
+        @include responsive.lg {
+          font-size: 48px;
+        }
+      }
+
+      .boxes {
+        display: flex;
+        justify-content: space-between;
+        max-width: 900px;
+        gap: 20px;
+
+        @include responsive.sm {
+          display: none;
+        }
+
+        .box {
+          flex: 1;
+          background-color: #f9f9f9;
+          padding: 20px;
+          max-width: 200px;
+          text-align: center;
+          border-radius: 12px;
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+          h1 {
+            font-size: 2.5rem;
+            color: #3e3f3f;
+            margin-bottom: 10px;
+            font-weight: 700;
+
+            @include responsive.lg {
+              font-size: 32px;
+            }
+          }
+
+          h2 {
+            font-size: 1.1rem;
+            color: #2d2d2d;
+            font-weight: 500;
+          }
+
+          &:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+          }
+        }
+      }
+
+      .hotel-description {
+        max-width: 720px;
+        padding: 20px;
+        color: #2d2d2d;
+        line-height: 1.7;
+        font-size: 1.125rem;
+        background-color: #f9f9f9;
+        border-left: 4px solid #3f3f3f;
+        border-radius: 8px;
+
+        p {
+          margin-bottom: 1.2rem;
+        }
+
+        strong {
+          font-weight: 600;
+          color: #363838;
+        }
+      }
+    }
+  }
+
+  .imgContainer {
+    flex: 2;
+    background-color: #fcf5f3;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include responsive.md {
+      display: none;
+    }
+
+    img {
+      width: 115%;
+      position: absolute;
+      right: 0;
+
+      @include responsive.lg {
+        width: 105%;
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+
+  &__buttons {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 250px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background-color: transparent;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    color: #333;
+    font-weight: 500;
+    transition: background 0.2s;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+
+  &__info {
+    font-size: 1rem;
+    color: #718096;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+}

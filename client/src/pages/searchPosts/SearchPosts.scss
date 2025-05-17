@@ -1,0 +1,54 @@
+@use "../../styles/responsive";
+
+.listPage {
+  display: flex;
+  height: 100%;
+
+  .listContainer {
+    flex: 3;
+    height: 100%;
+
+    .wrapper {
+      height: 100%;
+      padding-right: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      overflow: auto;
+      padding-bottom: 50px;
+
+      @include responsive.sm {
+        padding-right: 0;
+      }
+      .posts-error {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        color: red;
+        font-weight: bold;
+        font-size: 20px;
+      }
+
+      .map-mobile {
+        display: none;
+
+        @include responsive.md {
+          height: 300px;
+          width: 100%;
+          display: flex;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+  .mapContainer {
+    flex: 2;
+    height: 100%;
+    background-color: #fcf5f3;
+
+    @include responsive.md {
+      display: none;
+    }
+  }
+}

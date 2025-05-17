@@ -1,0 +1,40 @@
+.popupContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 200px;
+
+  img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    a {
+      font-size: 16px;
+      font-weight: 600;
+      color: #333;
+      text-decoration: none;
+
+      &:hover {
+        color: #0077ff;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      color: #666;
+    }
+
+    b {
+      font-size: 16px;
+      color: #222;
+    }
+  }
+}
