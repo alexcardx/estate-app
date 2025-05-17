@@ -16,9 +16,9 @@ A responsive fullstack real estate platform built with React, Express, MongoDB, 
 
 ### 📱 Mobile View
 
-| Room                                    | Search                                    | Map                                    | Description                                    | Form                                    |
-| --------------------------------------- | ----------------------------------------- | -------------------------------------- | ---------------------------------------------- | --------------------------------------- |
-| ![](./demo/screenshots/mobile/room.jpg) | ![](./demo/screenshots/mobile/search.jpg) | ![](./demo/screenshots/mobile/map.jpg) | ![](./demo/screenshots/mobile/description.jpg) | ![](./demo/screenshots/mobile/form.jpg) |
+| Room                                                         | Search                                                         | Map                                                         | Description                                                         | Form                                                         |
+| ------------------------------------------------------------ | -------------------------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------ |
+| <img src="./demo/screenshots/mobile/room.jpg" width="150" /> | <img src="./demo/screenshots/mobile/search.jpg" width="150" /> | <img src="./demo/screenshots/mobile/map.jpg" width="150" /> | <img src="./demo/screenshots/mobile/description.jpg" width="150" /> | <img src="./demo/screenshots/mobile/form.jpg" width="150" /> |
 
 ## 🚀 Features
 
