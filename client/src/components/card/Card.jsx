@@ -32,7 +32,7 @@ const statsIcons = {
   bathroom: { icon: <FaBath />, label: "Bathroom" },
 };
 
-const Card = ({ post, onRemove, handleChat }) => {
+const Card = ({ post, onRemove, handleOpenChat }) => {
   const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const [isSaved, setIsSaved] = useState(post.isSaved);
@@ -56,6 +56,14 @@ const Card = ({ post, onRemove, handleChat }) => {
       setIsSaved((prev) => !prev);
       setError(err.message || "Failed to save");
     }
+  };
+
+  const handleChat = (userId) => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+    handleOpenChat(userId);
   };
 
   useEffect(() => {

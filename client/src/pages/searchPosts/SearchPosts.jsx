@@ -78,7 +78,7 @@ const SearchPosts = () => {
                 <Card
                   key={post.id}
                   post={post}
-                  handleChat={handleOpenModalChat}
+                  handleOpenChat={handleOpenModalChat}
                 />
               ))}
             </>
